@@ -11,7 +11,6 @@
   <style>
     body, html {
       font-family: 'Montserrat', sans-serif;
-      white-space: nowrap;
     }
     #loading {
       position: absolute;
@@ -33,7 +32,7 @@
 <body class="d-flex flex-column justify-content-center align-items-center">
   <div id="loading" class="d-none flex-column justify-content-center align-items-center">
     <div id="spinner" class="spinner-grow text-danger"></div>
-    <span class="text-center h5 text-danger mt-2" id="progress">0</span>
+    <span class="text-center h5 text-danger mt-2" id="progress">0%</span>
   </div>
 
   <div id="body" class="container d-flex flex-column justify-content-center p-5">
@@ -52,10 +51,8 @@
         <button id="copy" type="button" class="btn btn-primary">Copy</button>
       </span>
       <span class="h6 d-block" id="detail"></span>
-      <div class="d-flex">
-        <textarea class="form-control w-50" id="text" rows="6"></textarea>
-        <img src="#" class="img-fluid w-50" id="preview">
-      </div>
+      <textarea class="form-control" id="text" rows="8"></textarea>
+      <img src="#" class="img-fluid" id="preview">
     </div>
   </div>
 
@@ -64,7 +61,7 @@
       logger: m => {
         if (m.status === 'recognizing text') {
           const percent = m.progress ?
-            (m.progress * 100).toFixed(2) : '0';
+            (m.progress * 100).toFixed(2) + '%' : '0';
           $('#progress').text(percent);
         }
       },
