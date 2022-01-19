@@ -12,6 +12,8 @@
     body, html {
       font-family: 'Montserrat', sans-serif;
       text-align: center;
+      background-image: url("./samples/html-color-codes-color-tutorials-hero.jpg");
+      background-position: center;
     }
     #loading {
       position: absolute;
@@ -21,6 +23,13 @@
       left: 50%;
       margin-top: -2.5rem; /* Negative half of height. */
       margin-left: -2.5rem; /* Negative half of width. */
+    }
+    #body {
+      background-image: url("./samples/images.png");
+      background-position: center;
+      margin: 15px;
+      border: 1px solid black;
+      border-radius: 5px;
     }
   </style>
 
@@ -37,9 +46,8 @@
   </div>
 
   <div id="body" class="container d-flex flex-column justify-content-center p-5">
-    <span class="h3 text-center">Image to Text Converter</span>
-    <span class="h5 text-center">KFUEIT</span>
-    <span class="h6 text-center">developed by some humans</span>
+    <span class="h2 text-center">Image to Text Converter</span>
+    <span class="h4 text-center">KFUEIT</span>
 
     <div class="mt-5" id="choose_box">
       <label for="image" class="form-label">Choose an image to covert into text</label>
@@ -55,6 +63,7 @@
       <textarea class="form-control" id="text" rows="8"></textarea>
       <img src="#" class="img-fluid mt-3" id="preview">
     </div>
+    <span class="h6 text-center mt-3 p-3">Developed by Ali Hassan and group @ KFUEIT</span>
   </div>
 
   <script>
